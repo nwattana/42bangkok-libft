@@ -59,7 +59,7 @@ SRCBONUS = ft_lstnew.c\
 	ft_lstiter.c\
 	ft_lstmap.c
 
-OBJSBONUS = $(SRCBONUS:.c=${OBJDIR}/%.o)
+OBJSBONUS = $(SRCBONUS:%.c=${OBJDIR}/%.o)
 
 OBJS = $(SRC:%.c=${OBJDIR}/%.o)
 
@@ -71,14 +71,12 @@ CFLAG = -Wall -Wextra -Werror
 
 all: ${NAME}
 
-${OBJS}: $(OBJDIR)/%.o: $(SRCDIR)/%.c
+${OBJS} ${OBJSBONUS}: $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	mkdir -p ${OBJDIR}
 	${CC} ${CFLAG} -I ${INCLUDEDIR} -c $< -o $@ 
-
+      
 $(NAME): ${OBJS}
 	ar rc ${NAME} ${OBJS}
-
-
 
 clean:
 		rm -f ${OBJDIR}/*.o
@@ -89,7 +87,7 @@ fclean: clean
 
 re:fclean all
 
-bonus: ${OBJS} ${OBJSBONUS}
-		ar rcs ${NAME} ${OBJS} ${OBJSBONUS}
+bonus: ${NAME} ${OBJSBONUS}
+		ar rc ${NAME} ${OBJSBONUS}
 
 .PHONY:norm all clean fclean re bonus
