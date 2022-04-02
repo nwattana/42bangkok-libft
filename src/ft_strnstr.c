@@ -16,10 +16,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	iter;
 	size_t	n_size;
-	size_t	h_size;
 	char	*c;
 
-	h_size = ft_strlen(haystack);
 	n_size = ft_strlen(needle);
 	c = (char *)haystack;
 	iter = 0;
