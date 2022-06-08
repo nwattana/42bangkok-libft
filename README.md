@@ -8,24 +8,29 @@ this just a short note how each functions work.
 ## PART 1 - Libc FUNCTION
 all of this function can be found in c libery   
 ### FT_IS
-ft_isalpha - check input is A-Z or a-z if not return 0.   
-ft_isdigit - check input is 0 - 9 oh i mean charactor.   
-ft_isalnum - combination of isalpha and isdigit.   
-ft_isprint - From 32 to 126 check table you will konw why.   
-ft_isascii - check input is ascii charactor.   
+`int ft_isalpha(int c)` - check input is A-Z or a-z if not return 0.   
+`int ft_isdigit(int c)` - check input is 0 - 9 oh i mean charactor.   
+`int ft_isalnum(int c)` - combination of isalpha and isdigit.   
+`int ft_isprint(int c)` - From 32 to 126 check table you will konw why.   
+`int ft_isascii(int c)` - check input is ascii charactor.   
    
 <strong>NOT</strong> FT_IS But ... I don't know where to catagorize it.   
-ft_toupper - recieve <strong>LOWERCASE</strong> charactor and change it to <strong>UPPERCASE</strong>   
-ft_tolowwer - recieve <strong>UPPERCASE</strong> charactor and change it to <strong>LOWWERCASE</strong>
+`int ft_toupper(int c)` - recieve <strong>LOWERCASE</strong> charactor and change it to <strong>UPPERCASE</strong>   
+`int ft_tolowwer(int c)` - recieve <strong>UPPERCASE</strong> charactor and change it to <strong>LOWWERCASE</strong>
 
 ### FT_MEM
 basic memory access.   
-ft_memset - recieve **address** then assigned **value** to the address (have length).   
-ft_bzero - memset but value = 0.   
-ft_memcpy - copy value!! from src address to the destination address.   
-ft_memmove - also copy but handle case overlap memory.   
-ft_memchr - return address of the first founded value.   
-ft_memcmp - compare each element in array return diff of differant element. 0 if equal.    
+`void *ft_memset(void *des, int c, size_t len)` - recieve **address** then assigned **value** to the address (have length).   
+`void ft_bzero(void *des, size_t len)` - memset but value = 0.   
+`void ft_memcpy(void *dst, const void *src, size_t len)` - copy value from src address to the destination address. restrict in c99 if you want more rigor     
+`void ft_memmove(void *dst, const void *src, size_t len)` - also copy but handle case overlap memory.   
+``` plaintext
+c[] = "123456"
+memcpy(c[1],c[0],3) -->c = "111156"
+memmove(c[1],c[0],3) --> c = "112356"
+```
+`ft_memchr ` - return address of the first founded value.   
+`ft_memcmp` - compare each element in array return diff of differant element. 0 if equal.    
 
 <strong>****Note the different between mem function and string function is mem dont stop at string terminate beware segfualt during use</strong>
 
