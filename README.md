@@ -20,7 +20,7 @@ ft_memmove - also copy but handle case overlap memory.
 ft_memchr - return address of the first founded value.   
 ft_memcmp - compare each element in array return diff of differant element. 0 if equal.    
 
-<strong>Note the different between mem function and string function is mem dont stop at string terminate beware segfualt during use</strong>
+<strong>****Note the different between mem function and string function is mem dont stop at string terminate beware segfualt during use</strong>
 
 
 
